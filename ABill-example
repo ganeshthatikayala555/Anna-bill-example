@@ -1,0 +1,35 @@
+public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        List<Integer>bill=new ArrayList<>();
+         
+        System.out.print("enter number of items");
+         int n=sc.nextInt();
+         System.out.print(" ");
+        System.out.print("enter the index number of item that anna didnt eat");
+        int k=1;
+        System.out.print("enter amount paid by anna");
+          int b=sc.nextInt();
+         System.out.println(" ");
+        bonAppetit(bill,k,b);
+        bill.add(3);
+         bill.add(10);
+         bill.add(2);
+         bill.add(9);
+    }
+    public static void bonAppetit(List<Integer> bill, int k, int b) {
+  
+           int sum=0;
+        for(int num:bill){
+            if(num==bill.get(k)){
+                continue;
+            }
+            sum+=num;
+        }
+        int actual=sum/2;
+        if(b==actual){
+            System.out.println("Bon Appetit");
+        }
+        else{
+            System.out.println(b-actual);
+        }
+    }
